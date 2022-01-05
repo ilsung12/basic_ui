@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import styled from '@emotion/styled/macro';
-import Skceleton from './components/Skceleton';
+import React, { useState, useEffect } from "react";
+import styled from "@emotion/styled/macro";
+import Skeleton from "./components/Skeleton";
 
 const Base = styled.div`
   display: grid;
@@ -50,10 +50,13 @@ const Item: React.FC = () => {
   return (
     <Container>
       <ImageWrapper>
-        <Image src="../public/logo192.png" />
+        <Image
+          src={`https://raw.githubusercontent.com/ilsung12/daeng-tel/main/img/main11.9abfe19f.jpg`}
+          alt="not found"
+        />
       </ImageWrapper>
       <Info>
-        <Title>Cat Talking a nap</Title>
+        <Title>{`입학식`}</Title>
         <Description>zzzzzzzzzzzz</Description>
       </Info>
     </Container>
@@ -64,12 +67,12 @@ const Placeholder: React.FC = () => {
   return (
     <Container>
       <ImageWrapper>
-        <Skceleton width={320} height={220} />
+        <Skeleton width={320} height={220} />
       </ImageWrapper>
       <Info>
-        <Skceleton width={150} height={22} rounded />
-        <div style={{ height: '8px' }} />
-        <Skceleton width={200} height={19} rounded />
+        <Skeleton width={150} height={22} rounded />
+        <div style={{ height: "8px" }} />
+        <Skeleton width={200} height={19} rounded />
       </Info>
     </Container>
   );
@@ -79,7 +82,7 @@ function App() {
   const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
-    setTimeout(() => setLoading(false), 20000);
+    setTimeout(() => setLoading(false), 2000);
   }, []);
 
   return (
